@@ -1,19 +1,20 @@
 #!/bin/bash
 
-chromedriver=""
-unamestr=`uname`
-unamearch=`uname -m`
-if [[ "$unamestr" == 'Linux' ]]; then
+OS=`uname`
+ARCH=`uname -m`
+CHROMEDRIVER=""
+
+if [[ "$OS" == 'Darwin' ]]; then
+   CHROMEDRIVER='chromedriver-osx'
+else
 	if [[ "$unamearch" == 'x86_64' ]]; then
-		chromedriver='chromedriver-linux32'
+		CHROMEDRIVER='chromedriver-linux32'
 	else
-		chromedriver='chromedriver-linux64'
+		CHROMEDRIVER='chromedriver-linux64'
 	fi
-elif [[ "$unamestr" == 'Darwin' ]]; then
-   chromedriver='chromedriver-osx'
 fi
 
-echo $chromedriver
+echo $CHROMEDRIVER
 
-java -Dwebdriver.chrome.driver=chromedriver/current/$chromedriver -jar selenium/current/selenium-server-standalone.jar
+java -Dwebdriver.chrome.driver=chromedriver/current/$CHROMEDRIVER -jar selenium/current/selenium-server-standalone.jar
 
