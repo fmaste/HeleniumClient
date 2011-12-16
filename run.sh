@@ -8,9 +8,9 @@ if [[ "$OS" == 'Darwin' ]]; then
    CHROMEDRIVER='chromedriver-osx'
 else
 	if [[ "$unamearch" == 'x86_64' ]]; then
-		CHROMEDRIVER='chromedriver-linux32'
-	else
 		CHROMEDRIVER='chromedriver-linux64'
+	else
+		CHROMEDRIVER='chromedriver-linux32'
 	fi
 fi
 
