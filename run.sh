@@ -14,7 +14,5 @@ else
 	fi
 fi
 
-echo $CHROMEDRIVER
-
 java -Dwebdriver.chrome.driver=chromedriver/current/$CHROMEDRIVER -jar selenium/current/selenium-server-standalone.jar
 
