@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Move to the script directory.
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+
 OS=`uname`
 ARCH=`uname -m`
 CHROMEDRIVER=""
